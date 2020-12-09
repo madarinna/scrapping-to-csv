@@ -126,7 +126,7 @@ async function getDetailItem(result, page){ // function to get the detailed info
         let rating = await page.evaluate(() => {
             return document.querySelector("span.css-4g6ai3 > span:nth-child(1)").innerText;
         });
-        result.item_description = description;
+        result.item_description = description.split("\n").join("");
         result.item_rating = rating;
         return result;
     }
